@@ -1,0 +1,57 @@
+Projet : Temporal Data Analysis
+À propos
+Ce document décrit les étapes essentielles à suivre pour mener à bien votre projet. Considérez-le comme un guide si vous ne savez pas par où commencer ou si vous vous perdez en cours de route. Quelques conseils sont également fournis pour vous aider à bien démarrer et à structurer votre travail.
+
+Charger et explorer les données
+Commencez par charger la base de données sunspot.csv avec pandas et explorez-en le contenu. NB : la série "sunspot" recense le nombre annuel de tâches solaires de 1700 à 1988.
+
+Cette étape est cruciale. Assurez-vous de bien comprendre vos données avant d'aller plus loin.
+
+Nettoyage et analyse des données (statistique descriptive)
+Quelques pistes qui pourraient être utiles :
+
+Organiser les données en un DataFrame indexé par le temps.
+Tester les opérations possibles sur les séries temporelles.
+Visualiser la série pour détecter d'éventuelles données manquantes ou valeurs aberrantes. Si tel est le cas, comment résoudre ces problèmes ?
+Partie fondamentale (statistique inférentielle)
+Il est temps de s'attaquer à la décomposition, modélisation et prédiction des séries temporelles via des modèles statistiques classiques. Points à examiner :
+
+Le modèle doit-il être additif ou multiplicatif ?
+Quel modèle est le plus approprié (AR, MA, ARMA, ARIMA, SARIMA ...) ?
+Peut-on décomposer la série en composants indépendants ? Lesquels sont les plus pertinents ?
+Comment ajuster le modèle choisi pour la partie d'apprentissage ?
+Quelle méthode utiliser pour prédire une partie de la série ? Trouver des intervalles de confiance ? Comment évaluer la qualité des prédictions ?
+Y a-t-il des tendances et des composantes saisonnières à éliminer dans la série ?
+Si oui, la série restante est-elle valide ? Utilisez des tests d'hypothèse pour répondre.
+Quelques questions à se poser
+Lors du choix du modèle, vérifiez par exemple si ces aspects influencent votre décision :
+
+Le modèle nécessite-t-il des ensembles de test et d'apprentissage ?
+Avez-vous assez de données pour obtenir des résultats fiables ?
+Le modèle impose-t-il des exigences de qualité des données ? Vos données y répondent-elles ?
+Quelles données seront utilisées pour tester le modèle ?
+Avez-vous bien séparé les ensembles d'apprentissage et de test ?
+Objectifs finaux
+Identifier le type de problème, l'entrée et la sortie attendues du modèle.
+Explorer et comprendre vos données.
+Choisir des méthodes d'évaluation pertinentes.
+Sélectionner un modèle adapté et comprendre son fonctionnement global ainsi que son mécanisme d'apprentissage.
+Conseils pour une bonne maîtrise
+Ne brûlez pas les étapes : comprenez bien chaque partie avant de passer à la suivante, et prenez le temps d'explorer vos données.
+Identifiez clairement la catégorie de votre problème.
+Au final qu'est-ce qui est attendu ?
+Veuillez déposer un seul document sur moodle au format PDF avant le 22 décembre 2024 minuit contenant à la fois les figures, tableaux, etc., accompagné d'une brève description et discussion de chaque résultat, ainsi qu'une synthèse finale. NB : ce n'est la quantité/le nombre de pages qui compte pour la note du projet.
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+sunspot = pd.read_csv("sunspot.csv", index_col="t")
+sunspot.plot(y="sunspot", figsize=(14,4));
+sunspot.head(5)
+sunspot
+t
+1700	5.0
+1701	11.0
+1702	16.0
+1703	23.0
+1704	36.0

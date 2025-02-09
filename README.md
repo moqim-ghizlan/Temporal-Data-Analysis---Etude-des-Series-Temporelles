@@ -65,6 +65,7 @@ pip install pandas matplotlib numpy
 ## Auteurs
 
 - **GHIZLAN Moqim**
+- **JUILLARD Thibaut**
 
 ---
 
